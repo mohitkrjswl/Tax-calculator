@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tax Calculator</title>
+    <!-- Bootstrap CSS link -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <!-- Your custom CSS file -->
+    <link rel="stylesheet" href="taxCalculator.css">
+</head>
+
+<body>
+    <header>
+        <div className="logo_container">
+            <Link to="/">
+            <img className="txc_home" src="\public\images\Fylelogo.svg" alt="Fyle_Home" />
+            </Link>
+        </div>
+        <nav class="navbar">
+            <ul class="navbar-nav">
+                <li class="nav-item"><a href="#" class="nav-link">Tax slab</a></li>
+                <li class="nav-item"><a href="#" class="nav-link">Solutions</a></li>
+                <li class="nav-item"><a href="#" class="nav-link">Previous Tax</a></li>
+                <li class="nav-item"><a href="#" class="nav-link">Contact</a></li>
+            </ul>
+
+            <div class="dropdown">
+                <a href="#" class="nav-link dropdown-toggle" id="navbarDropdown" role="button" aria-haspopup="true"
+                    aria-expanded="false">
+                    <i class="fas fa-sign-out-alt"></i>
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="#">Profile</a>
+                    <a class="dropdown-item" href="#">Settings</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="#">Feedback</a>
+                    <a class="dropdown-item" href="/">Logout</a>
+                </div>
+            </div>
+
+
+        </nav>
+    </header>
+    <div class="container mt-5 shadow-lg p-5" style="width:50%">
+        <h1 class="text-center">Tax Calculator</h1>
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <form id="taxForm">
+
+                    <div class="form-group mt-3">
+                        <label for="grossIncome">Enter Gross Annual Income:</label>
+                        <input type="number" class="form-control   id=" grossIncome" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="extraIncome">Enter Extra Income:</label>
+                        <input type="number" class="form-control" id="extraIncome" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="ageGroup">Age Group:</label>
+                        <select class="form-control" id="ageGroup" required aria-placeholder="Age">
+                            <option selected>Choose your age</option>
+                            <option value="under40">
+                                < 40</option>
+                            <option value="40to60"> ≥ 40 to 60</option>
+                            <option value="above60">≥ 60</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="deduction">Enter Total Applicable Deduction:</label>
+                        <input type="number" class="form-control" id="deduction" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-block">Calculate Tax</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- jQuery and Bootstrap JS links -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!-- Your custom JavaScript file -->
+    <script src="script.js"></script>
+</body>
+
+</html>

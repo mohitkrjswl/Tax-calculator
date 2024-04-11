@@ -1,3 +1,12 @@
+const express = require('express');
+const app = express();
+require('dotenv').config();
+const db = require('./db/db')
+const PORT = process.env.PORT || 3000;
+
+const bodyParser = require('body-parser');
+app.use(bodyParser.json()); //req.body
+
 document.addEventListener('DOMContentLoaded', function () {
   var dropdownToggles = document.querySelectorAll('.dropdown-toggle');
 
@@ -17,17 +26,17 @@ document.addEventListener('DOMContentLoaded', function () {
       });
     }
   });
-});
 
-$(document).ready(function () {
-  $('#taxForm').submit(function (event) {
+  var taxForm = document.getElementById('taxForm');
+
+  taxForm.addEventListener('submit', function (event) {
     event.preventDefault(); // Prevent form submission
 
-    // Get input values
-    var grossIncome = parseFloat($('#grossIncome').val());
-    var extraIncome = parseFloat($('#extraIncome').val());
-    var ageGroup = $('#ageGroup').val();
-    var deduction = parseFloat($('#deduction').val());
+    // Retrieve input values
+    var grossIncome = parseFloat(document.getElementById('grossIncome').value);
+    var extraIncome = parseFloat(document.getElementById('extraIncome').value);
+    var deduction = parseFloat(document.getElementById('deduction').value);
+    var ageGroup = document.getElementById('ageGroup').value;
 
     // Calculate overall income
     var overallIncome = grossIncome + extraIncome - deduction;
@@ -35,9 +44,9 @@ $(document).ready(function () {
     // Calculate tax based on age group
     var tax = 0;
     if (overallIncome > 800000) {
-      if (ageGroup === 'under40') {
+      if (ageGroup === 'under60') {
         tax = 0.3 * (overallIncome - 800000);
-      } else if (ageGroup === '40to60') {
+      } else if (ageGroup === '60to80') {
         tax = 0.4 * (overallIncome - 800000);
       } else if (ageGroup === 'above80') {
         tax = 0.1 * (overallIncome - 800000);
@@ -47,8 +56,7 @@ $(document).ready(function () {
     // Calculate overall income after tax
     var overallIncomeAfterTax = overallIncome - tax;
 
-    // Display overall income after tax
-    alert("Overall Income After Tax: " + overallIncomeAfterTax);
+    // Display overall income after tax (you can customize how you want to display it)
+    alert("Overall Income After Tax: " + overallIncomeAfterTax.toFixed(2));
   });
 });
-

@@ -39,7 +39,7 @@ $(document).ready(function () {
         tax = 0.3 * (overallIncome - 800000);
       } else if (ageGroup === '40to60') {
         tax = 0.4 * (overallIncome - 800000);
-      } else if (ageGroup === 'above80') {
+      } else if (ageGroup === 'above60') {
         tax = 0.1 * (overallIncome - 800000);
       }
     }
@@ -51,4 +51,3 @@ $(document).ready(function () {
     alert("Overall Income After Tax: " + overallIncomeAfterTax);
   });
 });
-

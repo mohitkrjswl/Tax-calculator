@@ -19,35 +19,44 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 });
 
-$(document).ready(function () {
-  $('#taxForm').submit(function (event) {
-    event.preventDefault(); // Prevent form submission
 
-    // Get input values
-    var grossIncome = parseFloat($('#grossIncome').val());
-    var extraIncome = parseFloat($('#extraIncome').val());
-    var ageGroup = $('#ageGroup').val();
-    var deduction = parseFloat($('#deduction').val());
+const form = document.getElementById('taxForm');
 
-    // Calculate overall income
-    var overallIncome = grossIncome + extraIncome - deduction;
+form.addEventListener('submit', function (event) {
+  event.preventDefault(); // Prevent default form submission
 
-    // Calculate tax based on age group
-    var tax = 0;
-    if (overallIncome > 800000) {
-      if (ageGroup === 'under40') {
-        tax = 0.3 * (overallIncome - 800000);
-      } else if (ageGroup === '40to60') {
-        tax = 0.4 * (overallIncome - 800000);
-      } else if (ageGroup === 'above60') {
-        tax = 0.1 * (overallIncome - 800000);
-      }
+  // Get user input values
+  const grossIncome = parseFloat(document.getElementById('grossIncome').value);
+  const extraIncome = parseFloat(document.getElementById('extraIncome').value) || 0;
+  const deductions = parseFloat(document.getElementById('deduction').value) || 0;
+  const ageGroup = document.getElementById('ageGroup').value;
+
+  // Calculate taxable income (after deductions)
+  const taxableIncome = grossIncome + extraIncome - deductions;
+  console.log("taxableIncome:", taxableIncome);
+  // Calculate tax rate based on age group
+  let taxRate = 0; // Initialize tax rate to 0
+  if (taxableIncome > 800000) {
+    if (ageGroup === 'under40') {
+      taxRate = 0.3;
+    } else if (ageGroup === '40to60') {
+      taxRate = 0.4;
+    } else if (ageGroup === 'above60') {
+      taxRate = 0.1;
     }
+  }
+  console.log("tax: ", taxRate);
 
-    // Calculate overall income after tax
-    var overallIncomeAfterTax = overallIncome - tax;
+  // Calculate tax amount
+  const tax = (taxableIncome - 800000) * taxRate;
 
-    // Display overall income after tax
-    alert("Overall Income After Tax: " + overallIncomeAfterTax);
-  });
+  console.log("Tax: ", tax);
+  // Calculate overall income (taxable income - tax)
+  const overallIncome = taxableIncome - tax;
+  console.log("overall ", overallIncome);
+  // Alert the overall income
+  alert("Your overall income is ₹" + overallIncome.toFixed(2));
+
+  // Reset the form
+  form.reset();
 });

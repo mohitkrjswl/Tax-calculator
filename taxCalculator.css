@@ -18,7 +18,7 @@ header {
   margin-left: 5px;
 }
 .txc_home {
-  height: 50px;
+  height: 30px;
 }
 
 img{
@@ -57,7 +57,7 @@ img{
   border-bottom: 1px solid #f36 ;
 }
 
-}
+
 .dropdown-menu {
   display: none; /* Hide dropdown menu by default */
   position: absolute;
@@ -78,7 +78,7 @@ img{
 }
  
 .container{
-  border-radius: 5px;
+  border-radius: 8px;
 }
 
  

@@ -34,6 +34,7 @@ form.addEventListener('submit', function (event) {
   // Calculate taxable income (after deductions)
   const taxableIncome = grossIncome + extraIncome - deductions;
   console.log("taxableIncome:", taxableIncome);
+
   // Calculate tax rate based on age group
   let taxRate = 0; // Initialize tax rate to 0
   if (taxableIncome > 800000) {
@@ -45,18 +46,36 @@ form.addEventListener('submit', function (event) {
       taxRate = 0.1;
     }
   }
-  console.log("tax: ", taxRate);
+  console.log("taxRate: ", taxRate);
 
   // Calculate tax amount
   const tax = (taxableIncome - 800000) * taxRate;
 
   console.log("Tax: ", tax);
+
   // Calculate overall income (taxable income - tax)
   const overallIncome = taxableIncome - tax;
-  console.log("overall ", overallIncome);
-  // Alert the overall income
-  alert("Your overall income is ₹" + overallIncome.toFixed(2));
+  console.log("overallIncome: ", overallIncome);
+
+  // Populate the modal with the calculated result
+  const modalResult = document.getElementById('modalResult');
+  modalResult.textContent = " Your Overall Income will be: ₹" + overallIncome.toFixed(2);
+
+  // Show the modal
+  const modal = document.getElementById('resultModal');
+  modal.style.display = "block";
 
   // Reset the form
   form.reset();
 });
+
+function closeModal() {
+  const modal = document.getElementById('resultModal');
+  modal.style.display = "none";
+}
+// function resetFormAndCloseModal() {
+//   const modal = document.getElementById('resultModal');
+//   modal.style.display = "none";
+//   form.reset();
+// }
+

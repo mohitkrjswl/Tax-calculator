@@ -1,47 +1,67 @@
-  
-    // const taxableIncome = grossIncome + extraIncome - deductions;// Calculate tax based on age group
-  // taxableIncome - 800000); // Calculate tax on exceeding amount  // let tax = 0;
-  // if (taxableIncome > 800000) { // Check if income exceeds 8 Lakhs
-  //   const taxRate = (ageGroup === 'under40') ? 0.3 : (ageGroup === '40to60') ? 0.4 : 0.1;
-  //   tax = taxRate * (
-  // }
+// .resultflash{
+//   width: 400px;
+//   height: 322px;
+//   background: #fff;
+//   border-radius: 6px;
+//   position: absolute;
+//   top:154px;
+//   left:50%;
+//   transform: translate(-50%,-50%);
+//   text-align: center;
+//   padding: 0 30px 30px;
+//   color: #333333;
+//   border: 1px solid #dfdada;
+//   border-radius: 2px rgba(122, 118, 118, 0.2);
+//   visibility: hidden;
+//   transition: transform 0.4s, top o.4s;
+// }
 
+// .open-Result{
+//   visibility:visible;
+//   top:50%;
+//   transform: translate(-50%,-50%);
+// }
+// .resultflash img{
+//   width: 100px;
+//   height: 100px;
+//   margin-top: 10px;
+//   border-radius: 50%;
+// }
+// .resultflash h3{
+//   font-size: 20px;
+//   font-weight: 500;
+//   margin: 30px;
+// }
+// .resultflash button{
+//   width: 50%;
+//   margin-top: 5px;
+//   padding: 10px 0;
+//   background: #3a6fd9;
+//   color: #fff;
+//   border: 0;
+//   outline:none;
+//   font-size: 18px;
+//   border-radius: 4px;
+//   cursor: pointer;
+//   box-shadow: 0 5px 5px rgba(0,0,0,0.2);
+// // }
+// <div class="resultflash" id="resultflash">
+//                         <img src="/public/images/icon.png" alt="img.px">
+//                         <h3>Your overall income will be `$(overallIncome)` </h3>
+//                         <p>after tax deductions</p>
+//                         <button type="button" onclick="close()">Thankyou!</button>
+//                     </div>
+{/* <script>
+        // Define variable openResultElement to hold the reference to the DOM element
+        let openResultElement = document.getElementById("taxCalculate");
 
-//   const form = document.getElementById('taxForm');
+        // Define function to open the result
+        function openResult() {
+            openResultElement.classList.add("open-Result");
+        }
 
-// form.addEventListener('submit', function (event) {
-//   event.preventDefault(); // Prevent default form submission
-
-//   // Get user input values
-//   const grossIncome = parseFloat(document.getElementById('grossIncome').value);
-//   const extraIncome = parseFloat(document.getElementById('extraIncome').value) || 0;
-//   const deductions = parseFloat(document.getElementById('deduction').value) || 0;
-//   const ageGroup = document.getElementById('ageGroup').value;
- 
-//   function tax(ageGroup, grossIncome, extraIncome, deduction) {
-//     const taxableIncome = grossIncome + extraIncome - deduction;
-
-//     // Check if taxable income is less than or equal to 8 Lakhs
-//     if (taxableIncome <= 800000) {
-//       return 0;
-//     } else {
-//       // Calculate tax based on age and taxable income
-//       let taxRate;
-//       if (ageGroup < 40) {
-//         taxRate = 0.3;
-//       } else if (ageGroup >= 40 && age < 60) {
-//         taxRate = 0.4;
-//       } else {
-//         taxRate = 0.1;
-//       }
-
-//       return (taxableIncome - 800000) * taxRate;
-//     }
-//   }
-//   // Calculate overall income (taxable income - tax)
-//   const overallIncome = taxableIncome - tax;
-//   alert("Your over all Income is " + overallIncome.toFixed(2));
-
-//   // Reset the form
-//   form.reset();
-// });
+        // Define function to close the result
+        function close() {
+            openResultElement.classList.remove("open-Result");
+        }
+    </script> */}//

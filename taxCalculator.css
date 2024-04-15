@@ -18,11 +18,11 @@ header {
   margin-left: 5px;
 }
 .txc_home {
-  height: 30px;
+  height: 25px;
 }
 
 img{
-  height: 25px;
+  height: 20px;
   margin-left: 5px ;
   
 }
@@ -81,51 +81,3 @@ img{
   border-radius: 8px;
 }
 
-.resultflash{
-  width: 400px;
-  height: 200px;
-  background: #fff;
-  border-radius: 6px;
-  position: absolute;
-  top:0;
-  left:50%;
-  transform: translate(-50%,-50%) scale(0.1);
-  text-align: center;
-  padding: 0 30px 30px;
-  color: #333333;
-  /* border: 1px solid #333; */
-  border-radius: 1px rgba(0,0,0,0.2);
-  visibility: hidden;
-  transition: transform 0.4s, top o.4s;
-}
-
-.open-Result{
-  visibility:visible;
-  top:50%;
-  transform: translate(-50%,-50%) scale(1);
-}
-.resultflash img{
-  width: 100px;
-  height: 100px;
-  margin-top: -50px;
-  border-radius: 50%;
-  /* box-shadow: 0 1px rgba(0,0,0, 0.2); */
-}
-.resultflash h3{
-  font-size: 38px;
-  font-weight: 500;
-  margin: 30px;
-}
-.resultflash button{
-  width: 100%;
-  margin-top: 50px;
-  padding: 10px 0;
-  background: #6fd649;
-  color: #fff;
-  border: 0;
-  outline:none;
-  font-size: 18px;
-  border-radius: 4px;
-  cursor: pointer;
-  box-shadow: 0 5px 5px rgba(0,0,0,0.2);
-}

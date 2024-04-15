@@ -77,13 +77,13 @@
                     </div>
                     <button type="submit" class="btn btn-primary btn-block" id="taxCalculate"
                         onclick="openResult()">Calculate Tax</button>
-                    <div class="resultflash" id="resultflash">
-                        <img src="/public/images/icon.png" alt="img.px">
-                        <h3>Your overall income will be `$(overallIncome)` </h3>
-                        <p>after tax deductions</p>
-                        <button type="button" onclick="close()">Thankyou!</button>
-                    </div>
                 </form>
+                <div class="flashcard" id="resultCard" style="display: none;">
+                    <div class="flashcard-body">
+                        <h3>Calculation Result</h3>
+                        <p id="result"></p>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -92,19 +92,6 @@
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <!-- Your custom JavaScript file -->
-    <Script>
-        let openResult = document.getElementById("taxCalculate");
-
-        function openResult() {
-            openResult.classList.add("open-Result")
-        }
-        function close() {
-            openResult.classList.remove("open-Result")
-        }
-
-
-    </Script>
-
     <script src="script.js"></script>
 </body>
 
